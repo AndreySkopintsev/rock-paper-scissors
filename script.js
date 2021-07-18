@@ -6,43 +6,22 @@ function computerPlay(){
     return options[optionIndex]
 }
 
-function singleRound(playerMove,computerMove){
-    if(playerMove.toLowerCase() == 'paper' || playerMove.toLowerCase() == 'rock' || playerMove.toLowerCase() == 'scissors'){
-        
-        console.log(`You chose ${playerMove.toLowerCase()}`)
-        console.log(`Computer chose ${computerMove}`)
-        if(playerMove.toLowerCase() == 'paper'){
-            if(computerMove == 'scissors'){
-                return 'You lose! Good day, sir!'
-            }else if(computerMove == 'paper'){
-                return 'It\'s a draw. Move along.'
-            }else{
-                return 'You won! Congrats!'
-            }
-        }else if(playerMove.toLowerCase() == 'rock'){
-            if(computerMove == 'scissors'){
-                return 'You won! Congrats!'
-            }else if(computerMove == 'paper'){
-                return 'You lose! Good day, sir!'
-            }else{
-                return 'It\'s a draw. Move along.'
-            }
-        }else{
-            if(computerMove == 'scissors'){
-                return 'It\'s a draw. Move along.'
-            }else if(computerMove == 'paper'){
-                return 'You won! Congrats!'
-            }else{
-                return 'You lose! Good day, sir!'
-            }
-        }
+
+function singleRound(player,computer){
+    if(player.toLowerCase() === computer){
+        return 'Draw'
     }else{
-        return 'Invalid input. Please try again.'
+        if(
+            (player.toLowerCase() == 'rock' && computer == 'scissors') ||
+            (player.toLowerCase() == 'paper' && computer == 'rock') ||
+            (player.toLowerCase() == 'scissors' && computer == 'paper')
+        ){
+            return `You won!${player} beats ${computer}`
+        }else{
+            return `You lost!${computer} beats ${player}`
+        }
     }
-    
-}
+} 
 
-let playerSelection = 'paper'
-let computerSelection = computerPlay()
 
-console.log(singleRound(playerSelection,computerSelection))
+
