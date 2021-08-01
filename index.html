@@ -19,9 +19,9 @@
                     <i class="far fa-user"></i><p class="score">Score <span id="computerScore">0</span></p>
                 </div>
                 <div class="buttons">
-                    <button><i class="far fa-hand-rock"></i>Rock</button>
-                    <button><i class="far fa-hand-paper"></i>Paper</button>
-                    <button><i class="far fa-hand-scissors"></i>Scissors</button>
+                    <button class="humanBtn" value="rock" id="humanChoice"><i class="far fa-hand-rock"></i>Rock</button>
+                    <button class="humanBtn" value="paper" id="humanChoice"><i class="far fa-hand-paper"></i>Paper</button>
+                    <button class="humanBtn" value="scissors" id="humanChoice"><i class="far fa-hand-scissors"></i>Scissors</button>
                 </div>
             </div>
             <div class="options">
@@ -30,9 +30,9 @@
                     <i class="fas fa-desktop"></i><p class="score">Score <span id="computerScore">0</span></p>
                 </div>
                 <div class="buttons">
-                    <button><i class="far fa-hand-rock"></i>Rock</button>
-                    <button><i class="far fa-hand-paper"></i>Paper</button>
-                    <button><i class="far fa-hand-scissors"></i>Scissors</button>
+                    <button class="computerBtn" id="computerRock" disabled><i class="far fa-hand-rock"></i>Rock</button>
+                    <button class="computerBtn" id="computerPaper" disabled><i class="far fa-hand-paper"></i>Paper</button>
+                    <button class="computerBtn" id="computerScissors" disabled><i class="far fa-hand-scissors"></i>Scissors</button>
                 </div>
             </div>
         </div>
@@ -40,6 +40,6 @@
             
         </div>
     </div>
-    <script src="cript.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
