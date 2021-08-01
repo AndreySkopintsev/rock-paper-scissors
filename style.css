@@ -27,7 +27,7 @@ h1,p{
 .score{
     border: 1px solid red;
     height: 200px;
-    width: 80%;
+    width: 800px;
     margin: auto;
     padding: 5px;
     display: flex;
@@ -47,7 +47,7 @@ h1,p{
 .buttons{
     border: 1px solid red;
     height: 70%;
-    width: 80%;
+    min-width: 320px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -55,20 +55,30 @@ h1,p{
 
 .buttons > button{
     height: 80px;
+    cursor: pointer;
     min-width: 80px;
+    padding: 5px;
+    background-color: #363636;
+    color: #fff;
     border: 1px solid #fff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 28px;
+    transition: 0.2s ease-in-out;
+}
+
+.buttons > button:hover {
+    border:1px solid gold;
+    box-shadow: 0 0 5px #fff;
 }
 
 .log-container{
     border: 1px solid gold;
     height: 50%;
-    width: 70%;
+    width: 800px;
     margin: auto;
     margin-top: 20px;
 }
