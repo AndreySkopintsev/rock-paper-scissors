@@ -24,8 +24,7 @@ h1,p{
     margin-bottom: 10px;
 }
 
-.score{
-    border: 1px solid red;
+.scoreboard{
     height: 200px;
     width: 800px;
     margin: auto;
@@ -34,18 +33,46 @@ h1,p{
     justify-content: space-around;
 }
 
+i{
+    font-size: 30px;
+}
+
 .options{
-    color: #fff;
-    border: 1px solid green;
+    background: #314158;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 28px;
     height: 100%;
-    width: 40%;
+    width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
 } 
 
+.options > p{
+    color: #fff;
+}
+
+.profile{
+    display: flex;
+    color: #fff;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 320px;
+    font-size: 18px;
+}
+
+.score{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    color: #ffb900;
+}
+
 .buttons{
-    border: 1px solid red;
     height: 70%;
     min-width: 320px;
     display: flex;
@@ -71,7 +98,7 @@ h1,p{
 }
 
 .buttons > button:hover {
-    border:1px solid gold;
+    border:1px solid #ffb900;
     box-shadow: 0 0 5px #fff;
 }
 
