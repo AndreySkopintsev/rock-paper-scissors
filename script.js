@@ -1,63 +1,18 @@
-// const options = ['rock','paper','scissors']
-// let computerPoints = 0
-// let playerPoints = 0
-// let round = 1
-
-// function computerPlay(){
-//     let optionIndex = Math.floor(Math.random()*3)
-//     return options[optionIndex]
-// }
-
-
-// function singleRound(player,computer){
-//     if(player.toLowerCase() === computer){
-//         return 'Draw'
-//     }else{
-//         if(
-//             (player.toLowerCase() == 'rock' && computer == 'scissors') ||
-//             (player.toLowerCase() == 'paper' && computer == 'rock') ||
-//             (player.toLowerCase() == 'scissors' && computer == 'paper')
-//         ){
-//             playerPoints++
-//             return `You won!${player} beats ${computer}`
-//         }else{
-//             computerPoints++
-//             return `You lost!${computer} beats ${player}`
-//         }
-//     }
-// } 
-
-// function game(){
-//     while(playerPoints < 5 && computerPoints < 5){
-        
-//         console.log(`Round ${round}. Fight!`)
-//         let playerChoice = prompt('What\'s your choice? Rock, paper or scissors?')
-//         let computerChoice = computerPlay()
-
-//         console.log(singleRound(playerChoice,computerChoice))
-//         console.log(`Player points: ${playerPoints}`)
-//         console.log(`Computer points: ${computerPoints}`)
-//         round++
-//     }
-//     if(playerPoints == 5){
-//         console.log('gratz you won')
-//     }else{
-//         console.log('you lost')
-//     }
-// }
-
-
-
-
-
 const humanBtns = document.querySelectorAll('#humanChoice')
 const choices = ['rock','paper','scissors']
+const log = document.getElementById('log')
+
+let humanScoreSpan = document.getElementById('humanScore')
+let computerScoreSpan = document.getElementById('computerScore')
+let humanScore = 0
+let computerScore = 0
 
 //Event Listeners
 
 humanBtns.forEach(btn => {
     btn.addEventListener('click',(e)=>{
-        singleRound(e.target.value)
+        singleRound(`${e.target.value}`)
+        console.log(e.target.value)
     })
 })
 
@@ -67,17 +22,44 @@ function computerMove(){
     return choices[index]
 }
 
+function checkScore(){
+    if(humanScore == 5 || computerScore == 5){
+        if(humanScore == 5){
+            alert('You won the game! Congratulations!')
+        }else{
+            alert('You lost! Computer is victorious!')
+        }
+        computerScoreSpan.textContent = '0'
+        humanScoreSpan.textContent = '0'
+        log.textContent = ''
+        humanScore = 0
+        computerScore = 0
+    }
+}
+
+function loggingMoves(phrase){
+    let para = document.createElement('p')
+    para.textContent = phrase
+    log.appendChild(para)
+}
+
 function singleRound(humanMove){
     let computerChoice = computerMove()
     console.log(`Your move is ${humanMove}`)
     console.log(`Computer move is ${computerChoice}`)
     if(humanMove == computerChoice){
-        console.log('Draw')
+        loggingMoves('Draw')
     }else if((humanMove == 'rock' && computerChoice == 'scissors') 
           || (humanMove == 'scissors' && computerChoice == 'paper')
           || (humanMove == 'paper' && computerChoice == 'rock')){
-              console.log('You win')
+              loggingMoves(`You win this round. Your ${humanMove} beat computer's ${computerChoice}`)
+              humanScore++
+              humanScoreSpan.textContent = `${humanScore}`
+              checkScore()
     }else{
-        console.log('You lose')
+        loggingMoves(`You lose this round. Computer's ${computerChoice} beat your ${humanMove}`)
+        computerScore++
+        computerScoreSpan.textContent = `${computerScore}`
+        checkScore()
     }
 }
