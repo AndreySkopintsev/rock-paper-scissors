@@ -57,7 +57,7 @@ const choices = ['rock','paper','scissors']
 
 humanBtns.forEach(btn => {
     btn.addEventListener('click',(e)=>{
-        console.log(e.target.value)
+        singleRound(e.target.value)
     })
 })
 
@@ -68,11 +68,16 @@ function computerMove(){
 }
 
 function singleRound(humanMove){
-    if(humanMove == computerMove()){
+    let computerChoice = computerMove()
+    console.log(`Your move is ${humanMove}`)
+    console.log(`Computer move is ${computerChoice}`)
+    if(humanMove == computerChoice){
         console.log('Draw')
-    }else if((humanMove == 'rock' && computerMove() == 'scissors') 
-          || (humanMove == 'scissors' && computerMove() == 'paper')
-          || (humanMove == 'paper' && computerMove() == 'rock')){
-              
-          }
+    }else if((humanMove == 'rock' && computerChoice == 'scissors') 
+          || (humanMove == 'scissors' && computerChoice == 'paper')
+          || (humanMove == 'paper' && computerChoice == 'rock')){
+              console.log('You win')
+    }else{
+        console.log('You lose')
+    }
 }
