@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,10 +9,45 @@
 body{
     background: url('https://rlmoser99.github.io/rock-paper-scissors/img/dark_wall.png');
     background-repeat: repeat;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    height: 400px;
+}
 
+.container{
+    height: 100%;
 }
 
 h1,p{
     color: #ffb900;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.score{
+    border: 1px solid red;
+    height: 200px;
+    width: 80%;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.computer{
+    border: 1px solid green;
+    height: 100%;
+    width: 40%;
+} 
+
+.human{
+    border: 1px solid purple;
+    height: 100%;
+    width: 40%;
+}
+
+.log-container{
+    border: 1px solid gold;
+    height: 100%;
+    width: 100%;
 }
