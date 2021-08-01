@@ -10,9 +10,8 @@ let computerScore = 0
 //Event Listeners
 
 humanBtns.forEach(btn => {
-    btn.addEventListener('click',(e)=>{
-        singleRound(`${e.target.value}`)
-        console.log(e.target.value)
+    btn.addEventListener('click',()=>{
+        singleRound(`${btn.value}`)
     })
 })
 
